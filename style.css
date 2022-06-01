@@ -13,7 +13,7 @@ body {
 
 .container {
     background: #0000008d;
-    height: 135vh;
+    /* height: 135vh; */
 }
 
 header h1 {
@@ -41,7 +41,7 @@ section h2 {
 
 #sign-in-email input[type=text] {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     padding: 15px;
     width: 60%;
     border-radius: 5px;
@@ -55,9 +55,8 @@ section h2 {
 
 #sign-in-email p {
     color: #e87c03;
-    padding: 5px 0 20px 0px;
+    padding: 5px 0px 20px 0px;
     font-size: 14px;
-    width: 90%
 }
 
 #sign-in-password input[type=password] {
@@ -76,25 +75,33 @@ section h2 {
 
 #sign-in-password p {
     color: #e87c03;
-    padding: 5px 0px 20px 0px;
+    padding: 10px 0px 0px 0px;
     font-size: 14px;
-    width: 67%;
-    margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .red-button {
-    margin: 40px 0 30px;
+    margin: 20px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section .sign-up {
     background-color: #e50914;
     text-decoration: none;
     color: #ffffff;
-    padding: 15px 130px;
+    padding: 15px 120px;
     border-radius: 5px;
     font-weight: 600;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.loading-gif {
+    position: absolute;
+    width: 40px;
+    display: none;
 }
 
 .remember-me-section {
@@ -138,10 +145,10 @@ section img {
 }
 
 .facebook-text {
-position: relative;
-bottom: 5px;
-left: 5px;
-font-size: 14px;
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+    font-size: 14px;
 }
 
 .netflix-text {
@@ -164,11 +171,10 @@ font-size: 14px;
 }
 
 footer {
-   background-color:#0000008d;
-   margin-top: 50px;
-   padding: 50px 0; 
-   color: #737373;
-   font-size: 15px;
+    background-color: #0000008d;
+    margin-top: 80px;
+    color: #737373;
+    font-size: 15px;
 }
 
 .footer-section {
@@ -177,43 +183,101 @@ footer {
 }
 
 .footer-section p {
-padding-bottom: 25px;
+    padding: 25px 0;
 }
 
-.footer-links {
-    background-color: red;
+.footer-container-links {
     display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
 }
 
-/* .footer-link-one {
-    width: 10%;
+.footer-links-one {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-bottom: 25px;
 }
 
-.footer-link-two {
-    width: 10%;
+.footer-links-one li {
+    list-style: none;
 }
 
-.footer-link-three {
-    width: 10%;
-}
-.footer-link-four {
-    width: 10%;
-}
-.footer-link-five {
-    width: 10%;
-    background-color: green;
-}
-.footer-link-six {
-    width: 10%;
-} */
-
-.footer-links a {
+.footer-links-one a {
     text-decoration: none;
     color: #737373;
 }
 
+.footer-links-one a:hover {
+    text-decoration-line: underline;
+}
 
+.footer-links-two {
+    display: flex;
+    width: 100%;
+}
+
+.footer-links-two li {
+    list-style: none;
+}
+
+.footer-links-two a {
+    text-decoration: none;
+    color: #737373;
+}
+
+.footer-links-two a:hover {
+    text-decoration-line: underline;
+}
+
+.footer-link-a-one {
+    padding-right: 65px;
+}
+
+.footer-link-a-two {
+    padding-bottom: 25px;
+}
+
+/* Smaller Desktop */
+@media only screen and (min-width: 901px) and (max-width: 1200px){
+    section {
+        width: 60%;
+    }
+    section .sign-up {
+        padding: 15px 90px !important;
+        width: 65% !important;
+    }   
+}
+
+/* Tablet Screen Display */
+@media only screen and (max-width: 900px) {
+    section {
+        width: 60%;
+    }
+    section .sign-up {
+        padding: 15px 90px !important;
+        width: 65% !important;
+    }   
+}
+
+/* Mobile Screen Display */
+@media only screen and (min-width: 500px) and (max-width: 899px) {
+    section {
+        width: 70%;
+    }
+    section .sign-up {
+        padding: 15px 90px !important;
+        width: 70% !important;
+        font-size: 18px !important;
+    }  
+    .footer-section {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .footer-links-one {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 25px;
+    }
+}

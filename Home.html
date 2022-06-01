@@ -19,15 +19,16 @@
         <section>
             <h2>Sign In</h2>
             <form id="sign-in-email">
-                <input type="text" placeholder="Email or phone number">
-                <p>Please enter a valid email or phone number.</p>
+                <input id="email-input" type="text" placeholder="Email or phone number">
+                <p class="email-message"></p>
             </form>
             <form id="sign-in-password">
-                <input type="password" placeholder="Password">
-                <p>Your password must contain between 4 and 60 characters.</p>
+                <input id="password-input" type="password" placeholder="Password">
+                <p class="password-message"></p>
             </form>
             <div class="red-button">
-                <a class="sign-up" href="movies.html">Sign In</a>
+                <button class="sign-up">Sign In</button>
+                <img class="loading-gif" src="/Images/Eclipse-1s-200px.gif" alt="">
             </div>
             <div class="remember-me-section">
                <div class="remember-me">
@@ -44,41 +45,29 @@
                 <p class="netflix-text">New to Netflix? <span>Sign up now</span>.</p>
                <div class="section-footer">
                 <p>This page is protected by Google reCAPTCHA to ensure you're not a bot.
-                <a href="#">Learn more.</a></p>
+                <a href="https://policies.google.com/privacy">Learn more.</a></p>
                </div>
             </div>
         </section>
         <footer>
             <div class="footer-section">
                 <p>Questions? Call 1-844-505-2993</p>
-                <div class="footer-links">
-                <div class="footer-link-one">
-                    <a href="https://help.netflix.com/en/node/412">FAQ</a>
+                <div class="footer-container-links">
+                   <div class="footer-links-one">
+                       <a href="https://help.netflix.com/en/node/412" target="_blank">FAQ</a>
+                       <a href="https://help.netflix.com/en/" target="_blank">Help Center</a>
+                       <a href="https://help.netflix.com/legal/termsofuse" target="_blank">Terms of Use</a>
+                       <a href="https://help.netflix.com/legal/privacy" target="_blank">Privacy</a>
+                       </div>
+                       <div class="footer-links-two">
+                        <li><a class="footer-link-a-one" href="https://help.netflix.com/en/node/124516" target="_blank">Cookie Preferences</a></li>
+                        <li class="footer-link-a-two"><a href="https://help.netflix.com/legal/corpinfo" target="_blank">Corporate Information</a></li>
+                    </div>
                 </div>
-                <div class="footer-link-two">
-                    <a href="">Help Center</a>
-                </div>
-                <div class="footer-link-three">
-                    <a href="">Terms of Use</a>
-                </div>
-                <div class="footer-link-four">
-                    <a href="">Privacy</a>
-                </div>
-                <div class="footer-link-five">
-                    <a href="">Cookie Preferences</a>
-                </div>
-                <div class="footer-link-six">
-                    <a href="">Corporate Information</a>
-                </div>
-                </div>
-            <form class="">
-                <i class="fa-solid fa-globe"></i>
-                <input type="text" placeholder="English">
-                <select name="" id=""></select>
-            </form>
         </div>
         </footer>
     </div>
+    <script src="/script.js"></script>
 </body>
 
 </html>
