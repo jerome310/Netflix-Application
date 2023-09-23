@@ -265,9 +265,15 @@ footer {
     section {
         width: 70%;
     }
+    #sign-in-email input[type=text] {
+        width: 66% !important;
+    }
+    #sign-in-password input[type=password] {
+        width: 66% !important;
+    }
     section .sign-up {
         padding: 15px 90px !important;
-        width: 70% !important;
+        width: 75% !important;
         font-size: 18px !important;
     }  
     .footer-section {

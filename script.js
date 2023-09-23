@@ -30,11 +30,11 @@ passwordBar.addEventListener('keyup', () => {
 //     }
 // }
 
-function delay() {
-    setTimeout( () => 
-    { location.href = '/movies.html'}, 2000 
-    );
-}
+// function delay() {
+//     setTimeout( () => 
+//     { location.href = '/movies.html'}, 2000 
+//     );
+// }
 
 submitButton.addEventListener('click', function () {
     const passwordValue = passwordBar.value
@@ -54,8 +54,8 @@ submitButton.addEventListener('click', function () {
             setTimeout(() => {
                 submitButton.style.backgroundColor = '#e5091485';
                 submitButton.textContent = "";
-                loadingGif.style.display = 'block';
-                submitButton.style.padding = '27px 150px';
+                // loadingGif.style.display = 'block';
+                // submitButton.style.padding = "15px 90px";
                 // mobileButton()
                 delay()
             }, 1000);
