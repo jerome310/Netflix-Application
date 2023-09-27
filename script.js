@@ -5,6 +5,7 @@ const submitButton = document.querySelector('.sign-up');
 const buttonContainer = document.querySelector('.red-button');
 const loadingGif = document.querySelector('.loading-gif');
 let passwordBar = document.getElementById('password-input');
+let hidden = document.querySelector(".hidden");
 let emailBar = document.getElementById('email-input');
 
 emailBar.addEventListener('keyup', () => {
@@ -21,45 +22,54 @@ passwordBar.addEventListener('keyup', () => {
     }
 })
 
+// Delay to moving on movies page
+function delay() {
+    setTimeout( () => 
+    { 
+        location.href = '/movies.html'
+        hidden.style.opacity = "1";
+        loadingGif.style.display = "none";
+        submitButton.style.backgroundColor = '#e50914';
+    }, 1000 
+    );
+}
 
-// Testing to see if this can work once the screen size is 500px width
-// function mobileButton(){
-//     let w = window.innerWidth;
-//     if(w = '500px'){
-//         submitButton.style.padding = '30px 150px';
-//     }
-// }
-
-// function delay() {
-//     setTimeout( () => 
-//     { location.href = '/movies.html'}, 2000 
-//     );
-// }
-
-submitButton.addEventListener('click', function () {
-    const passwordValue = passwordBar.value
+// Need to add inside the if statement you clearing the value of the email and password input value
+function formClear() {
+    const passwordValue = passwordBar.value;
     const emailValue = emailBar.value;
     const regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
+    setTimeout(() => {
         if (regx.test(emailValue)) {
-            emailMessage.textContent = ''
+          emailMessage.textContent = "";
+          emailBar.value = "";
         } else {
-            emailMessage.textContent = 'Please enter a valid email.';    
+          emailMessage.textContent = "Please enter a valid email.";
         }
-        if(passwordValue.length > 4 && passwordValue.length < 20){
-            passwordMessage.textContent = ''
+        if (passwordValue.length > 4 && passwordValue.length < 20) {
+          passwordMessage.textContent = "";
+          passwordBar.value = "";
         } else {
-            passwordMessage.textContent = 'Your password must contain between 4 and 20 characters.'
+          passwordMessage.textContent =
+            "Your password must contain between 4 and 20 characters.";
         }
-        if(regx.test(emailValue) && passwordValue.length > 4 && passwordValue.length < 20){
-            setTimeout(() => {
-                submitButton.style.backgroundColor = '#e5091485';
-                submitButton.textContent = "";
-                // loadingGif.style.display = 'block';
-                // submitButton.style.padding = "15px 90px";
-                // mobileButton()
-                delay()
-            }, 1000);
-        }
+
+    }, 1000);
+
+    if (
+      regx.test(emailValue) &&
+      passwordValue.length > 4 &&
+      passwordValue.length < 20
+    ) {
+      submitButton.style.backgroundColor = "#e5091485";
+      hidden.style.opacity = "0";
+      loadingGif.style.display = "block";
+    }
+    delay();
+}
+
+submitButton.addEventListener('click', function () {
+     formClear();
 })
 
 
