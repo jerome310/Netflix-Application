@@ -4,28 +4,27 @@ const playBtn = document.querySelector(".play");
 //const video = document.querySelector("#video source").src;
 const video = document.querySelector("#video");
 
-// This function muted the video audio add a mute attribute
+// This function mute's the video audio
 function toggleMuted() {
-  video.muted = !video.muted;
+  video.muted = video;
 }
 
-// Testing if this remove the mute attribute to give the mute button functionality
-// function toggleunMuted() {
-//   video.removeAttribute('mute')
-// }
-
-// NEED TO FIGURE OUT WHY I'm getting a deplay on the button to play audio and mute audio
+// This function unmute's the video audio
+function toggleunMuted() {
+  video.muted = !video;
+}
 
 // Play & Mute Button Feature
 muteBtn.addEventListener("click", () => {
   playBtn.style.display = "block";
   muteBtn.style.display = "none";
-  toggleMuted();
+  toggleunMuted();
 });
 
 playBtn.addEventListener("click", () => {
   playBtn.style.display = "none";
   muteBtn.style.display = "block";
+  toggleMuted();
 });
 
 // Movies
