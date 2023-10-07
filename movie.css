@@ -6,7 +6,9 @@ body {
 }
 
 nav {
-    background-color: #0000009b;
+    /* background-color: black; */
+    background-color: #000000c1;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
     z-index: 2;
     position: relative;
     width: 100%;
@@ -29,12 +31,30 @@ nav .logo {
     font-weight: 800;
 }
 
+.left-nav-side {
+    display: flex;
+}
+
+.left-nav-side svg {
+    color: white;
+    width: 25px;
+}
+
+.search-bar {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    background-color: #000000c1;
+    color: #ffffff;
+}
+
 nav .sign-out {
     color: #ffffff;
     text-decoration: none;
     background-color: #E50914;
-    padding: 2px 15px;
+    padding: 0px 15px;
     border-radius: 3px;
+    margin-left: 15px;
 }
 
 header video {
@@ -48,4 +68,70 @@ header video {
     height: 100vh;
     background-color: #0000007a;
     z-index: 1;
+}
+
+.header-content {
+    position: absolute;
+    top: 10%;
+    padding: 0 30px;
+    z-index: 1;
+    display: block;
+}
+
+.header-show-img img {
+    width: 200px;
+}
+
+
+.header-show-container {
+    display: flex;
+}
+
+.header-show-description {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.header-show-description .title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.volume-container .mute {
+    position: relative;
+    top: 50%;
+    width: 40px;
+    display: block;
+}
+
+.volume-container .play {
+    position: relative;
+    top: 50%;
+    width: 40px;
+    display: none;
+}
+
+@media only screen and (min-width: 700px) {
+    .fade-container {
+        position: relative;
+        height: 112vh;
+        background-color: #0000007a;
+        z-index: 1;
+    }
+
+    .header-content {
+        position: absolute;
+        top: 30%;
+        z-index: 1;
+        display: block;
+    }
+
+    .header-show-description .title {
+        font-size: 30px;
+    }
+
+    .paragraph {
+        font-size: 18px;
+        width: 50%;
+    }
 }
