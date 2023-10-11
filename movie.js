@@ -28,16 +28,19 @@ playBtn.addEventListener("click", () => {
 });
 
 // Movies
-const APIURL =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+// const url = "https://imdb8.p.rapidapi.com/auto-complete?q=anime";
+// const options = {
+//   method: "GET",
+//   headers: {
+//     "X-RapidAPI-Key": "a7457775a3msh339280f2861ee9ep1fc898jsnc3aa1dec1d36",
+//     "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
+//   },
+// };
 
-console.log(APIURL);
-
-let movieImages = () => {
-  fetch(APIURL)
-    .then((data) => data.json())
-    .then((item) => {
-      // text.textContent = item.slip.advice;
-      console.log(item.page.results);
-    });
-};
+// try {
+//   const response = await fetch(url, options);
+//   const result = await response.text();
+//   console.log(result);
+// } catch (error) {
+//   console.error(error);
+// }
