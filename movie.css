@@ -138,12 +138,12 @@ header video {
         z-index: 1;
     }
 
-    .header-content {
+    /* .header-content {
         position: absolute;
         top: 30%;
         z-index: 1;
         display: block;
-    }
+    } */
 
     .header-show-description .title {
         font-size: 30px;
@@ -152,6 +152,16 @@ header video {
     .paragraph {
         font-size: 18px;
         width: 50%;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .header-content {
+            position: absolute;
+            top: 30%;
+            z-index: 1;
+            display: block;
     }
 
     .play-button {
@@ -163,27 +173,34 @@ header video {
         z-index: 1;
     }
 
+    .play-audio-img {
+        display: none;
+    }
+
     .play-button button {
-        height: 45px;
-        width: 125px;
+        height: 50px;
+        width: 145px;
         font-size: 18px;
         font-weight: 600;
         border: 0;
         border-radius: 5px;
         position: relative;
         left: 40px;
+        cursor: pointer;
     }
 
     .play-button button span {
         position: relative;
         left: 15px;
+        cursor: pointer;
     }
 
     .play-button svg {
         position: absolute;
-        left: 50%;
+        left: 35%;
         width: 30px;
         color: black;
         z-index: 1;
+        cursor: pointer;
     }
 }
