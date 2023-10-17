@@ -64,7 +64,7 @@ header video {
 
 .fade-container {
     position: relative;
-    height: 38vh;
+    height: 42vh;
     background-color: #0000007a;
     z-index: 1;
 }
