@@ -28,10 +28,9 @@ playBtn.addEventListener("click", () => {
 
 // Desktop Audio Button
 const playButton = document.querySelector(".play-button");
-console.log(playButton)
+const muteButton = document.querySelector(".mute-button");
 const muteAudio = document.querySelector(".mute-audio-img");
 const playAudio = document.querySelector(".play-audio-img");
-//const muteButton = document.querySelector(".mute-button");
 const desktopVideo = document.querySelector("#video");
 
 // This function mute's the video audio
@@ -44,43 +43,19 @@ function toggleunMuted() {
   desktopVideo.muted = !desktopVideo;
 }
 
-// Play & Mute Button Feature
-// muteBtn.addEventListener("click", () => {
-//   playBtn.style.display = "block";
-//   muteBtn.style.display = "none";
-//   toggleunMuted();
-// });
-
-playButton.addEventListener("click", () => {
-  if (muteAudio.style.display = 'block') {
-    muteAudio.style.display = "none";
-    playAudio.style.display = "block";
-    toggleunMuted();
-  } else {
-    
-  }
-  // if (playAudio.style.display = "none") {
-  //   playAudio.style.display = "block";
-  //   toggleMuted();
-  // }
-  //playButton.style.display = "none";
-  //muteBtn.style.display = "block";
+muteButton.addEventListener("click", () => {
+  muteButton.style.display = "none";
+  playButton.style.display = "flex";
+  toggleunMuted();
 });
 
-// Movies
-// const url = "https://imdb8.p.rapidapi.com/auto-complete?q=anime";
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "a7457775a3msh339280f2861ee9ep1fc898jsnc3aa1dec1d36",
-//     "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
-//   },
-// };
+playButton.addEventListener("click", () => {
+  muteButton.style.display = "flex";
+  playButton.style.display = "none";
+  toggleMuted();
+});
 
-// try {
-//   const response = await fetch(url, options);
-//   const result = await response.text();
-//   console.log(result);
-// } catch (error) {
-//   console.error(error);
-// }
+
+
+// Movie List
+

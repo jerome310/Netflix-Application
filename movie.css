@@ -6,7 +6,6 @@ body {
 }
 
 nav {
-    /* background-color: black; */
     background-color: #000000c1;
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
     z-index: 2;
@@ -65,7 +64,7 @@ header video {
 
 .fade-container {
     position: relative;
-    height: 100vh;
+    height: 32vh;
     background-color: #0000007a;
     z-index: 1;
 }
@@ -130,20 +129,67 @@ header video {
     display: none;
 }
 
+.header-buttons {
+    display: none;
+}
+
+.movie-container {
+    z-index: 2;
+    color: white;
+    margin-left: 25px;
+}
+
+.movie-img {
+    width: 250px;
+    height: 200px;
+    object-fit: contain;
+    /* border-radius: 1px; */
+}
+
+.movie-description {
+    position: relative;
+    bottom: 40px;
+}
+
+.movie-name {
+    color: #ffffff;
+    margin: 0;
+    font-size: 20px;
+    padding: 10px 0 0 10px;
+    position: relative;
+    right: 10px;
+}
+
+.imdb-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 53%;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating svg {
+    width: 20px;
+    padding-right: 5px;
+    color: gold;
+}
+
+.movie-year p {
+    display: flex;
+    background-color: red;
+}
+
 @media only screen and (min-width: 700px) {
     .fade-container {
         position: relative;
-        height: 112vh;
+        height: 34vh;
         background-color: #0000007a;
         z-index: 1;
     }
-
-    /* .header-content {
-        position: absolute;
-        top: 30%;
-        z-index: 1;
-        display: block;
-    } */
 
     .header-show-description .title {
         font-size: 30px;
@@ -158,10 +204,25 @@ header video {
 
 @media only screen and (min-width: 1200px) {
     .header-content {
-            position: absolute;
-            top: 30%;
-            z-index: 1;
-            display: block;
+        position: absolute;
+        top: 30%;
+        z-index: 1;
+        display: block;
+    }
+
+    .fade-container {
+        position: relative;
+        height: 112vh;
+        background-color: #0000007a;
+        z-index: 1;
+    }
+
+    .volume-container {
+        display: none;
+    }
+
+    .header-buttons {
+        display: block;
     }
 
     .play-button {
@@ -171,10 +232,6 @@ header video {
         bottom: 28%;
         left: -.7%;
         z-index: 1;
-    }
-
-    .play-audio-img {
-        display: none;
     }
 
     .play-button button {
@@ -196,6 +253,54 @@ header video {
     }
 
     .play-button svg {
+        position: absolute;
+        left: 35%;
+        width: 30px;
+        color: black;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .mute-button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 28%;
+        left: -.7%;
+        z-index: 1;
+    }
+
+    .mute-button button {
+        height: 50px;
+        width: 145px;
+        font-size: 18px;
+        font-weight: 600;
+        border: 0;
+        border-radius: 5px;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+
+    .mute-button button {
+        height: 50px;
+        width: 145px;
+        font-size: 18px;
+        font-weight: 600;
+        border: 0;
+        border-radius: 5px;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+
+    .mute-button button span {
+        position: relative;
+        left: 15px;
+        cursor: pointer;
+    }
+
+    .mute-button svg {
         position: absolute;
         left: 35%;
         width: 30px;
