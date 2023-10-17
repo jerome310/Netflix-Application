@@ -149,7 +149,7 @@ header video {
 .movie-description {
     position: relative;
     bottom: 40px;
-    width: 53%;
+    width: 100%;
 }
 
 .movie-name {
@@ -182,6 +182,12 @@ header video {
     display: flex;
 }
 
+.movie-flex-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 @media only screen and (min-width: 700px) {
     .fade-container {
         position: relative;
@@ -203,6 +209,11 @@ header video {
         position: relative;
         bottom: 40px;
         width: 32%;
+    }
+
+    .movie-flex-container {
+        display: flex;
+        flex-direction: row;
     }
 }
 
@@ -318,5 +329,10 @@ header video {
         position: relative;
         bottom: 40px;
         width: 17%;
+    }
+
+    .movie-flex-container {
+        display: flex;
+        flex-direction: row;
     }
 }
