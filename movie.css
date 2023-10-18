@@ -211,6 +211,98 @@ header video {
         width: 50%;
     }
 
+    .volume-container {
+        display: none;
+    }
+
+    .header-buttons {
+        display: block;
+    }
+
+    .play-button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 34%;
+        left: -.7%;
+        z-index: 1;
+    }
+
+    .play-button button {
+        height: 50px;
+        width: 145px;
+        font-size: 18px;
+        font-weight: 600;
+        border: 0;
+        border-radius: 5px;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+
+    .play-button button span {
+        position: relative;
+        left: 15px;
+        cursor: pointer;
+    }
+
+    .play-button svg {
+        position: absolute;
+        left: 35%;
+        width: 30px;
+        color: black;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .mute-button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 34%;
+        left: -.7%;
+        z-index: 1;
+    }
+
+    .mute-button button {
+        height: 50px;
+        width: 145px;
+        font-size: 18px;
+        font-weight: 600;
+        border: 0;
+        border-radius: 5px;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+
+    .mute-button button {
+        height: 50px;
+        width: 145px;
+        font-size: 18px;
+        font-weight: 600;
+        border: 0;
+        border-radius: 5px;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+
+    .mute-button button span {
+        position: relative;
+        left: 15px;
+        cursor: pointer;
+    }
+
+    .mute-button svg {
+        position: absolute;
+        left: 35%;
+        width: 30px;
+        color: black;
+        z-index: 1;
+        cursor: pointer;
+    }
+
     .movie-container {
         z-index: 2;
         color: white;
@@ -257,7 +349,7 @@ header video {
         display: flex;
         align-items: center;
         position: absolute;
-        bottom: 28%;
+        bottom: 8%;
         left: -.7%;
         z-index: 1;
     }
@@ -293,7 +385,7 @@ header video {
         display: flex;
         align-items: center;
         position: absolute;
-        bottom: 28%;
+        bottom: 8%;
         left: -.7%;
         z-index: 1;
     }
