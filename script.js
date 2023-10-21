@@ -1,76 +1,91 @@
-const emailForm = document.getElementById('sign-in-email');
-const emailMessage = document.querySelector('.email-message');
-const passwordMessage = document.querySelector('.password-message');
-const submitButton = document.querySelector('.sign-up');
-const buttonContainer = document.querySelector('.red-button');
-const loadingGif = document.querySelector('.loading-gif');
-let passwordBar = document.getElementById('password-input');
-let hidden = document.querySelector(".hidden");
-let emailBar = document.getElementById('email-input');
+// const emailForm = document.getElementById('sign-in-email');
+// const emailMessage = document.querySelector('.email-message');
+// const passwordMessage = document.querySelector('.password-message');
+// const submitButton = document.querySelector('.sign-up');
+// const buttonContainer = document.querySelector('.red-button');
+   const loadingGif = document.querySelector('.loading-gif');
+   let hidden = document.querySelector(".hidden");
+// let passwordBar = document.getElementById('password-input');
+// let emailBar = document.getElementById('email-input');
 
-emailBar.addEventListener('keyup', () => {
-    let emailValue = emailBar.value;
-    if (emailValue != "") {
-        emailBar.style.border = 'none';
-    }
-})
 
-passwordBar.addEventListener('keyup', () => {
-    let passwordValue = passwordBar.value
-    if (passwordValue != "") {
-        passwordBar.style.border = 'none'
-    }
-})
+// REAL ESTATE DOM ELEMENTS
+let forms = document.querySelectorAll("form");
+let input = document.querySelector("#email-input");
+let signUpBtn = document.querySelector(".sign-up-button");
+let passwordInput = document.querySelector("#password-input");
+let displayValue = [];
 
-// Delay to moving on movies page
-function delay() {
-    setTimeout( () => 
-    { 
-        location.href = '/movies.html'
-        hidden.style.opacity = "1";
-        loadingGif.style.display = "none";
-        submitButton.style.backgroundColor = '#e50914';
-    }, 1000 
-    );
-}
+// Keep Input Value from clearing on refresh
+forms.forEach(form => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+});
 
-// Need to add inside the if statement you clearing the value of the email and password input value
-function formClear() {
-    const passwordValue = passwordBar.value;
-    const emailValue = emailBar.value;
-    const regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
-    setTimeout(() => {
-        if (regx.test(emailValue)) {
-          emailMessage.textContent = "";
-          emailBar.value = "";
-        } else {
-          emailMessage.textContent = "Please enter a valid email.";
-        }
-        if (passwordValue.length > 4 && passwordValue.length < 20) {
-          passwordMessage.textContent = "";
-          passwordBar.value = "";
-        } else {
-          passwordMessage.textContent =
-            "Your password must contain between 4 and 20 characters.";
-        }
+// Login Input Fields Authenification Section
+signUpBtn.addEventListener("click", () => {
+  //Email Address Logic
+  let inputValue = input.value;
+  let incorrectEmailText = document.querySelector(".email-message");
+  //displayValue.push(inputValue);
+  if (input.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/)) {
+    input.placeholder = "Email or phone number";
+    input.style.fontWeight = "normal";
+    input.classList.remove("placeholder-color");
+    input.style.backgroundColor = "";
+    incorrectEmailText.textContent = "";
+  } else {
+    input.style.backgroundColor = "#ffcccb";
+    input.placeholder = "Valid Email Required";
+    input.style.fontWeight = "bold";
+    input.classList.add("placeholder-color");
+    incorrectEmailText.style.color = "red";
+    incorrectEmailText.textContent = "Please enter a valid email";
+  }
+  input.value = "";
 
-    }, 1000);
+  // Password Logic
+  // Regex Logic: Needs eight characters, 1 uppercase, 1 lowercase and 1 number
+  let passwordValue = passwordInput.value;
+  let incorrectPasswordText = document.querySelector(".password-message");
 
-    if (
-      regx.test(emailValue) &&
-      passwordValue.length > 4 &&
-      passwordValue.length < 20
-    ) {
-      submitButton.style.backgroundColor = "#e5091485";
-      hidden.style.opacity = "0";
-      loadingGif.style.display = "block";
-    }
-    delay();
-}
+  displayValue.push(inputValue, passwordValue);
+  let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  console.log(displayValue);
+  if (passwordValue.match(regex)) {
+    passwordInput.style.backgroundColor = "";
+    document.querySelector("#password-input").placeholder = "Password";
+    incorrectPasswordText.textContent = "";
+    //incorrectPasswordText.style.color = "";
+    passwordInput.classList.remove("placeholder-color");
+    passwordInput.style.fontWeight = "normal";
+  } else {
+    passwordInput.style.backgroundColor = "#ffcccb";
+    document.querySelector("#password-input").placeholder =
+      "Incorrect Password";
+    passwordInput.classList.add("placeholder-color");
+    passwordInput.style.fontWeight = "bold";
+    incorrectPasswordText.textContent =
+      "Needs 8 characters, 1 uppercase/lowercase and 1 number";
+    incorrectPasswordText.style.color = "red";
+  }
+  passwordInput.value = "";
 
-submitButton.addEventListener('click', function () {
-     formClear();
-})
+  if (input.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/)) {
+    signUpBtn.style.backgroundColor = "#e5091485";
+    hidden.style.opacity = "0";
+    loadingGif.style.display = "block";
+  }
+
+  // Both Input Fields Homepage Logic
+  if (
+    inputValue.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/) &&
+    passwordValue.match(regex)
+  ) {
+    location.href = "/movies.html";
+  }
+});
 
 
 

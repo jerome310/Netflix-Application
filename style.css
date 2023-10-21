@@ -53,6 +53,10 @@ section h2 {
     font-size: 16px;
 }
 
+#sign-in-email input[type=text].placeholder-color::placeholder {
+    color: #000000;
+}
+
 #sign-in-email p {
     color: #e87c03;
     padding: 5px 0px 20px 0px;
@@ -71,6 +75,10 @@ section h2 {
     outline: none;
     color: #ffffff;
     font-size: 16px;
+}
+
+#sign-in-password input[type=password].placeholder-color::placeholder {
+    color: #000000;
 }
 
 #sign-in-password p {
