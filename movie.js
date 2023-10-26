@@ -55,7 +55,17 @@ playButton.addEventListener("click", () => {
   toggleMuted();
 });
 
-
-
 // Movie List
+const API_KEY = "api_key=0886ec0cdb036b7f0a823254454c484b";
+const BASE_URL = "https://api.themoviedb.org/3/";
+const API_URL = BASE_URL + "discover/movie?sort_by=popularity.desc&" + API_KEY;
 
+const getMovies = (url) => {
+ fetch(url)
+ .then(res => res.json()
+ .then(data => {
+  console.log(data)
+ }))  
+}
+
+getMovies(API_URL);
