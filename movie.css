@@ -57,18 +57,35 @@ nav .sign-out {
     margin-left: 15px;
 }
 
-header video {
+.hero-video {
     width: 100%;
-    position: absolute;
-    top: 0;
+    position: relative;
+    z-index: 1;
 }
 
-.fade-container {
+.hero-video video {
+    width: 100%;
+}
+
+.hero-video::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #0000007a;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* .fade-container {
     position: relative;
     height: 32vh;
     background-color: #0000007a;
     z-index: 1;
-}
+} */
 
 .header-content {
     position: absolute;
@@ -190,13 +207,8 @@ header video {
     justify-content: space-evenly;
 }
 
+
 @media only screen and (min-width: 700px) {
-    .fade-container {
-        position: relative;
-        height: 34vh;
-        background-color: #0000007a;
-        z-index: 1;
-    }
 
     .header-show-description {
         display: block;
@@ -211,20 +223,16 @@ header video {
         width: 50%;
     }
 
-    .volume-container {
-        display: none;
-    }
-
     .header-buttons {
         display: block;
+        position: relative;
+        margin-top: 15px;
     }
 
     .play-button {
         display: flex;
         align-items: center;
         position: absolute;
-        top: 34%;
-        left: -.7%;
         z-index: 1;
     }
 
@@ -236,13 +244,13 @@ header video {
         border: 0;
         border-radius: 5px;
         position: relative;
-        left: 40px;
+        
         cursor: pointer;
     }
 
     .play-button button span {
         position: relative;
-        left: 15px;
+        
         cursor: pointer;
     }
 
@@ -259,8 +267,6 @@ header video {
         display: flex;
         align-items: center;
         position: absolute;
-        top: 34%;
-        left: -.7%;
         z-index: 1;
     }
 
@@ -272,7 +278,7 @@ header video {
         border: 0;
         border-radius: 5px;
         position: relative;
-        left: 40px;
+        
         cursor: pointer;
     }
 
@@ -330,30 +336,6 @@ header video {
         display: block;
     }
 
-    .fade-container {
-        position: relative;
-        height: 114vh;
-        background-color: #0000007a;
-        z-index: 1;
-    }
-
-    .volume-container {
-        display: none;
-    }
-
-    .header-buttons {
-        display: block;
-    }
-
-    .play-button {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 6%;
-        left: -.7%;
-        z-index: 1;
-    }
-
     .play-button button {
         height: 50px;
         width: 145px;
@@ -379,15 +361,6 @@ header video {
         color: black;
         z-index: 1;
         cursor: pointer;
-    }
-
-    .mute-button {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 6%;
-        left: -.7%;
-        z-index: 1;
     }
 
     .mute-button button {
