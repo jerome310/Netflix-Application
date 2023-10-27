@@ -203,7 +203,7 @@ nav .sign-out {
 
 @media only screen and (min-width: 700px) {
     .volume-container {
-        display: none;        
+        display: none;
     }
 
     .header-show-description {
@@ -307,8 +307,12 @@ nav .sign-out {
     }
 
     .movie-flex-container {
-        display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .movie-container {
+        margin: 0 10px;
     }
 }
 
