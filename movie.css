@@ -80,13 +80,6 @@ nav .sign-out {
     bottom: 0;
 }
 
-/* .fade-container {
-    position: relative;
-    height: 32vh;
-    background-color: #0000007a;
-    z-index: 1;
-} */
-
 .header-content {
     position: absolute;
     top: 10%;
@@ -209,6 +202,9 @@ nav .sign-out {
 
 
 @media only screen and (min-width: 700px) {
+    .volume-container {
+        display: none;        
+    }
 
     .header-show-description {
         display: block;
@@ -244,19 +240,18 @@ nav .sign-out {
         border: 0;
         border-radius: 5px;
         position: relative;
-        
         cursor: pointer;
     }
 
     .play-button button span {
         position: relative;
-        
         cursor: pointer;
+        left: 10px;
     }
 
     .play-button svg {
         position: absolute;
-        left: 35%;
+        left: 5px;
         width: 30px;
         color: black;
         z-index: 1;
@@ -278,7 +273,6 @@ nav .sign-out {
         border: 0;
         border-radius: 5px;
         position: relative;
-        
         cursor: pointer;
     }
 
@@ -290,126 +284,41 @@ nav .sign-out {
         border: 0;
         border-radius: 5px;
         position: relative;
-        left: 40px;
         cursor: pointer;
     }
 
     .mute-button button span {
         position: relative;
-        left: 15px;
+        left: 10px;
         cursor: pointer;
     }
 
     .mute-button svg {
         position: absolute;
-        left: 35%;
+        left: 5px;
         width: 30px;
         color: black;
         z-index: 1;
         cursor: pointer;
     }
 
-    .movie-container {
-        z-index: 2;
-        color: white;
-    }
-
     .movie-description {
-        position: relative;
-        bottom: 40px;
         width: 90%;
     }
 
     .movie-flex-container {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
     }
 }
 
 
 @media only screen and (min-width: 1200px) {
     .header-content {
-        position: absolute;
         top: 30%;
-        z-index: 1;
-        display: block;
-    }
-
-    .play-button button {
-        height: 50px;
-        width: 145px;
-        font-size: 18px;
-        font-weight: 600;
-        border: 0;
-        border-radius: 5px;
-        position: relative;
-        left: 40px;
-        cursor: pointer;
-    }
-
-    .play-button button span {
-        position: relative;
-        left: 15px;
-        cursor: pointer;
-    }
-
-    .play-button svg {
-        position: absolute;
-        left: 35%;
-        width: 30px;
-        color: black;
-        z-index: 1;
-        cursor: pointer;
-    }
-
-    .mute-button button {
-        height: 50px;
-        width: 145px;
-        font-size: 18px;
-        font-weight: 600;
-        border: 0;
-        border-radius: 5px;
-        position: relative;
-        left: 40px;
-        cursor: pointer;
-    }
-
-    .mute-button button {
-        height: 50px;
-        width: 145px;
-        font-size: 18px;
-        font-weight: 600;
-        border: 0;
-        border-radius: 5px;
-        position: relative;
-        left: 40px;
-        cursor: pointer;
-    }
-
-    .mute-button button span {
-        position: relative;
-        left: 15px;
-        cursor: pointer;
-    }
-
-    .mute-button svg {
-        position: absolute;
-        left: 35%;
-        width: 30px;
-        color: black;
-        z-index: 1;
-        cursor: pointer;
     }
 
     .movie-description {
-        position: relative;
-        bottom: 40px;
         width: 100%;
-    }
-
-    .movie-flex-container {
-        display: flex;
-        flex-direction: row;
     }
 }
