@@ -149,7 +149,8 @@ nav .sign-out {
 .movie-container {
     z-index: 2;
     color: white;
-    padding: 0 149px;
+    width: 40%;
+    /* background-color: green; */
 }
 
 .movie-img {
@@ -304,7 +305,7 @@ nav .sign-out {
     }
 
     .movie-description {
-        width: 90%;
+        width: 80%;
     }
 
     .movie-flex-container {
@@ -313,6 +314,7 @@ nav .sign-out {
     }
 
     .movie-container {
+        width: 30%;
         margin: 0 10px;
     }
 }
@@ -323,7 +325,19 @@ nav .sign-out {
         top: 30%;
     }
 
+    .movie-container {
+        width: 20%;
+        margin: 0 10px;
+    }
+
     .movie-description {
+        display: flex;
+        width: 65%;
+        /* background-color: brown; */
+    }
+
+    .movie-name {
+        /* background-color: red; */
         width: 100%;
     }
 }
