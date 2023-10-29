@@ -149,6 +149,7 @@ nav .sign-out {
 .movie-container {
     z-index: 2;
     color: white;
+    padding: 0 149px;
 }
 
 .movie-img {

@@ -79,9 +79,12 @@ const showMovies = (data) => {
     const { title, poster_path, vote_average, release_date } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie-container");
-    movieEl.innerHTML = `<img src="${IMG_URL + poster_path}" alt="${title}">
-        <div class="movie-description">
-            <p class="movie-name">${title}</p>
+    console.log(document.querySelector('.movie-description'));
+    movieEl.innerHTML = `<img style="width: 200px;" src="${
+      IMG_URL + poster_path
+    }" alt="${title}">
+        <div style="display: flex; flex-direction: column;" class="movie-description">
+            <p style="padding-top: 45px; display: flex; flex-wrap: wrap;" class="movie-name">${title}</p>
             <div class="imdb-info-container">
                 <div class="rating">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -96,8 +99,10 @@ const showMovies = (data) => {
                 </div>
             </div>
         </div>`;
-        movieFlexContainer.appendChild(movieEl)
-  
+    movieEl.style.display = 'flex';
+    movieEl.style.alignItems = 'center';
+    movieEl.style.flexDirection = 'column';
+    movieFlexContainer.appendChild(movieEl);
   }));
 }
 
