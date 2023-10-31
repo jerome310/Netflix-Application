@@ -63,23 +63,23 @@ const IMG_URL = "https://image.tmdb.org/t/p/w500/";
 const movieFlexContainer = document.querySelector(".movie-flex-container");
 
 const getMovies = () => {
- fetch(API_URL)
- //console.log(API_URL)
- .then((res) => res.json().then((data) => {
-     console.log(data.results);
-     showMovies(data.results);
-   })
- );  
-}
+  fetch(API_URL)
+    //console.log(API_URL)
+    .then((res) =>
+      res.json().then((data) => {
+        console.log(data.results);
+        showMovies(data.results);
+      })
+    );
+};
 
 const showMovies = (data) => {
-  movieFlexContainer.innerHTML = '';
+  movieFlexContainer.innerHTML = "";
 
-  data.forEach((movie => {
+  data.forEach((movie) => {
     const { title, poster_path, vote_average, release_date } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie-container");
-    console.log(document.querySelector('.movie-description'));
     movieEl.innerHTML = `<img style="width: 200px;" src="${
       IMG_URL + poster_path
     }" alt="${title}">
@@ -99,11 +99,29 @@ const showMovies = (data) => {
                 </div>
             </div>
         </div>`;
-    movieEl.style.display = 'flex';
-    movieEl.style.alignItems = 'center';
-    movieEl.style.flexDirection = 'column';
+    movieEl.style.display = "flex";
+    movieEl.style.flexDirection = "column";
+    // WORK ON THIS FEATURE FOR THE MOVIE TITLES
+    const dynamicP = document.querySelector('.movie-container p');
+    if (dynamicP) {
+      // 1) I want to target the length of the characters for each title movie
+      // 2) Remove the extra text after the targetted length and replace it with 3 dots
+    }
     movieFlexContainer.appendChild(movieEl);
-  }));
-}
+  });
+};
 
 getMovies();
+
+
+// Search Button
+const btnSearch = document.querySelector(".btn-search");
+const inputSearch = document.querySelector(".input-search");
+
+btnSearch.addEventListener('click', () => {
+   inputSearch.style.width = '300px';
+   inputSearch.style.borderRadius = '0px';
+   inputSearch.style.backgroundColor = "transparent";
+   inputSearch.style.borderBottom = "1px solid rgba(255, 255, 255, .5)";
+   input.style.transition = "all 500ms cubic-bezier(0, 0.110, 0.35, 2)";
+})
