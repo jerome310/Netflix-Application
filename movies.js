@@ -119,9 +119,5 @@ const btnSearch = document.querySelector(".btn-search");
 const inputSearch = document.querySelector(".input-search");
 
 btnSearch.addEventListener('click', () => {
-   inputSearch.style.width = '300px';
-   inputSearch.style.borderRadius = '0px';
-   inputSearch.style.backgroundColor = "transparent";
-   inputSearch.style.borderBottom = "1px solid rgba(255, 255, 255, .5)";
-   input.style.transition = "all 500ms cubic-bezier(0, 0.110, 0.35, 2)";
+      inputSearch.classList.toggle('zero-input');
 })
