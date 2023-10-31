@@ -83,7 +83,7 @@ const showMovies = (data) => {
     movieEl.innerHTML = `<img style="width: 200px;" src="${
       IMG_URL + poster_path
     }" alt="${title}">
-        <div style="display: flex; flex-direction: column;" class="movie-description">
+        <div style="display: flex; flex-direction: column; align-items: center;" class="movie-description">
             <p style="padding-top: 45px; display: flex; flex-wrap: wrap;" class="movie-name">${title}</p>
             <div class="imdb-info-container">
                 <div class="rating">
@@ -101,12 +101,7 @@ const showMovies = (data) => {
         </div>`;
     movieEl.style.display = "flex";
     movieEl.style.flexDirection = "column";
-    // WORK ON THIS FEATURE FOR THE MOVIE TITLES
-    const dynamicP = document.querySelector('.movie-container p');
-    if (dynamicP) {
-      // 1) I want to target the length of the characters for each title movie
-      // 2) Remove the extra text after the targetted length and replace it with 3 dots
-    }
+    movieEl.style.alignItems = 'center';
     movieFlexContainer.appendChild(movieEl);
   });
 };
@@ -117,7 +112,10 @@ getMovies();
 // Search Button
 const btnSearch = document.querySelector(".btn-search");
 const inputSearch = document.querySelector(".input-search");
+const signOut = document.querySelector(".sign-out");
 
 btnSearch.addEventListener('click', () => {
       inputSearch.classList.toggle('zero-input');
+
+      signOut.classList.toggle('sign-disappear');
 })

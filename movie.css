@@ -33,6 +33,7 @@ nav .logo {
 
 .left-nav-side {
     display: flex;
+    align-items: center;
 }
 
 .left-nav-side svg {
@@ -55,6 +56,10 @@ nav .sign-out {
     padding: 0px 15px;
     border-radius: 3px;
     margin-left: 15px;
+}
+
+.sign-disappear {
+    display: none;
 }
 
 .hero-video {
@@ -229,6 +234,7 @@ nav .sign-out {
     color: #fff;
 }
 
+/* CREATED CLASS FOR SEARCH BAR */
 .zero-input {
     width: 125px;
     border-radius: 0px;
@@ -376,6 +382,11 @@ nav .sign-out {
     .movie-container {
         width: 30%;
         margin: 0 10px;
+    }
+
+    .sign-disappear {
+        display: block;
+        align-items: ;
     }
 
     .zero-input {
