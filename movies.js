@@ -61,13 +61,15 @@ const BASE_URL = "https://api.themoviedb.org/3/";
 const API_URL = BASE_URL + "discover/movie?sort_by=popularity.desc&" + API_KEY;
 const IMG_URL = "https://image.tmdb.org/t/p/w500/";
 const movieFlexContainer = document.querySelector(".movie-flex-container");
+const form = document.getElementById("form");
+console.log(form)
+const input = document.querySelector(".input-search");
+const searchURL = BASE_URL + "/search/movie?" + API_KEY;
 
-const getMovies = () => {
-  fetch(API_URL)
-    //console.log(API_URL)
+const getMovies = (url) => {
+  fetch(url)
     .then((res) =>
       res.json().then((data) => {
-        console.log(data.results);
         showMovies(data.results);
       })
     );
@@ -83,7 +85,7 @@ const showMovies = (data) => {
     movieEl.innerHTML = `<img style="width: 200px;" src="${
       IMG_URL + poster_path
     }" alt="${title}">
-        <div style="display: flex; flex-direction: column; align-items: center;" class="movie-description">
+        <div style="display: flex; flex-direction: column;" class="movie-description">
             <p style="padding-top: 45px; display: flex; flex-wrap: wrap;" class="movie-name">${title}</p>
             <div class="imdb-info-container">
                 <div class="rating">
@@ -101,21 +103,33 @@ const showMovies = (data) => {
         </div>`;
     movieEl.style.display = "flex";
     movieEl.style.flexDirection = "column";
-    movieEl.style.alignItems = 'center';
+    movieEl.style.alignItems = "center";
     movieFlexContainer.appendChild(movieEl);
   });
 };
 
-getMovies();
+getMovies(API_URL);
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const inputValue = input.value;
+
+  if (inputValue) {
+    getMovies(searchURL + "&query=" + inputValue);
+    console.log(showMovies());
+  }
+
+  input.value = ''
+});
 
 // Search Button
 const btnSearch = document.querySelector(".btn-search");
 const inputSearch = document.querySelector(".input-search");
 const signOut = document.querySelector(".sign-out");
 
-btnSearch.addEventListener('click', () => {
-      inputSearch.classList.toggle('zero-input');
+btnSearch.addEventListener("click", () => {
+  inputSearch.classList.toggle("zero-input");
 
-      signOut.classList.toggle('sign-disappear');
-})
+  signOut.classList.toggle("sign-disappear");
+});
